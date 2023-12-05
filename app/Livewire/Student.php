@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Classes;
 use App\Models\Students;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -17,12 +18,13 @@ class Student extends Component
     public function render()
     {
         $students = Students::paginate(10);
-        return view('livewire.student', ['students' => $students])->extends('layouts.base')->slot('content');
+        $classes = Classes::get();
+        return view('livewire.student', ['students' => $students, 'classes' => $classes])->extends('layouts.base')->slot('content');
     }
 
     public function save()
     {
-        Students::create(
+        $student = Students::create(
             $this->only(['first_name', 'last_name', 'email', 'birthdate'])
         );
 
