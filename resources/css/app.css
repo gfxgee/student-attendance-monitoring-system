@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+}
+
+@layer base {
+    h1 {
+        @apply sm:text-3xl text-2xl font-bold text-blue-600
+    }
+    h2 {
+        @apply sm:text-4xl text-xl font-bold
+    }
+    h4 {
+        @apply text-lg
+    }
+    h1 span, h2 span, h3 span, p span {
+        @apply border-b-4 border-b-green-500 mb-10;
+    }
+    footer h4 {
+        @apply text-white font-medium
+    }
+    ul li a {
+        @apply text-white text-sm
+    }
+    ul li:hover a, ul li:focus a {
+        @apply underline
+    }
+    ul li i {
+        @apply text-green-400
+    }
+}
