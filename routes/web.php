@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Attendance;
 use App\Livewire\Classes;
 use App\Livewire\Student;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::get('/', function () {
 
 Route::get('/students', Student::class)->name('student.index');
 Route::get('/classes', Classes::class)->name('classes.index');
+Route::get('/attendance', Attendance::class)->name('attendance.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
